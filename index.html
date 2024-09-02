@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Pokemon Search Engine</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik+Scribble&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <main>
+    <section id="container">
+      <div id="title-div">
+        <img src="pokemon-name.gif" alt="Pokemon">
+      </div>
+      <div class=".reset" id="finder">
+        <div id="center">
+          
+        </div>
+        <input id="search-input" required type="text" placeholder="search term">
+      </div>
+      
+      <button id="search-button">
+        <svg viewBox="0 0 21.166666 21.166667" class="pokemon-app-icon">
+          <defs>
+            <radialGradient id="myGradient" fr="90%" r="30%" gradientTransform="rotate(-360)">
+              <stop offset="5%" stop-color="#b80410ea" />
+              <stop offset="15%" stop-color="white" />
+              <stop offset="17%" stop-color="white" />
+              <stop offset="75%" stop-color="#ae010d" />
+              <stop offset="100%" stop-color="#ae010d" />
+            </radialGradient>
+            <radialGradient id="buttonGradient" fr="5%" r="10%">
+              <stop offset="5%" stop-color="blue" />
+              <stop offset="100%" stop-color="silver" />
+            </radialGradient>
+          </defs>
+          <path class="outline" fill="#000000" d="M 21.166666,10.583333 A 10.583333,10.583333 0 0 1 10.583333,21.166666 10.583333,10.583333 0 0 1 0,10.583333 10.583333,10.583333 0 0 1 10.583333,0 10.583333,10.583333 0 0 1 21.166666,10.583333 Z"></path>
+          <path class="white-half" fill="#f3e7e7 " d="m 19.9092,10.516492 a 9.3927078,9.3927078 0 0 1 -4.696354,8.134324 9.3927078,9.3927078 0 0 1 -9.3927083,-10e-7 9.3927078,9.3927078 0 0 1 -4.6963536,-8.134323"></path>
+          <g>
+            <path class="red-half" id="red-path" fill="url('#myGradient')" transform="scale(-1)" d="m -1.1237841,-10.516492 a 9.3927078,9.3927078 0 0 1 -4.696354,8.1343238 9.3927078,9.3927078 0 0 1 -9.3927079,-2e-7 9.3927078,9.3927078 0 0 1 -4.696354,-8.1343236"></path>
+            <path class="black-line" fill="#f3e7e7 " stroke="#000000" stroke-width="1.09496" d="m 0.5291671,10.516492 c 20.1083319,0 20.1083319,0 20.1083319,0 v 0"></path>
+            <path class="button-black" id="black-path" fill="#000000" d="M 14.022916,10.583333 A 3.4395833,3.4395833 0 0 1 10.583333,14.022916 3.4395833,3.4395833 0 0 1 7.1437497,10.583333 3.4395833,3.4395833 0 0 1 10.583333,7.1437497 3.4395833,3.4395833 0 0 1 14.022916,10.583333 Z"></path>
+            <path class="button-white" fill="#f3e7e7 " d="M 13.229166,10.583333 A 2.6458333,2.6458333 0 0 1 10.583333,13.229166 2.6458333,2.6458333 0 0 1 7.9374998,10.583333 2.6458333,2.6458333 0 0 1 10.583333,7.9374998 2.6458333,2.6458333 0 0 1 13.229166,10.583333 Z"></path>
+            <path class="button-circle" fill="rgba(254, 249, 249, 0.759)" stroke="black" stroke-width="0.302033" d="M 12.331111,10.516492 A 1.7477779,1.7477779 0 0 1 10.583333,12.26427 1.7477779,1.7477779 0 0 1 8.8355551,10.516492 1.7477779,1.7477779 0 0 1 10.583333,8.768714 1.7477779,1.7477779 0 0 1 12.331111,10.516492 Z"></path>
+            <path id="search-path" fill="transparent" d="M 4,11 Q 10.5 0, 17, 11"></path>
+            <text id="search-text">
+              <textPath href="#search-path" textLength="65%" startoffset="11%" fill="white" font-size=".25rem">Search</textPath>
+            </text>
+          </g>
+        </svg>
+      </button>
+      
+    </section>
+    <section id="results" aria-live="polite">
+      <div class="grid" id="left">
+        <div class="data-row"  id="types"><span class="value type" id="t1">GHOST</span><span class="value type" id="t2">POISON</span><span class="value type" id="t3">THIRD</span></div>
+        <div class="data-row"><label for="attack">Attack</label><span class="value"  id="attack">65</span></div>
+        <div class="data-row"><label for="defense">Defense</label><span class="value" id="defense">60</span></div>
+        <div class="data-row"><label for="special-defense">Special Defense</label><span class="value"  id="special-defense">75</span></div>
+        <div class="data-row" ><label for="speed">Speed</label><span class="value" id="speed">110</span></div>
+      </div>
+      <div class="grid" id="right">
+        <div class="data-row"><label for="pokemon-name">Name</label><span class="value"  id="pokemon-name">Gengar</span></div>
+        <div class="data-row" ><label for="pokemon-id">ID</label><span class="value"  id="pokemon-id">94</span></div>
+        <div class="data-row"><label for="special-attack">Special Attack</label><span class="value" id="special-attack">130</span></div>
+        
+        <div class="data-row" ><label for="weight">Weight</label><span class="value" id="weight">405</span></div>
+        <div class="data-row" ><label for="height">Height</label><span class="value" id="height">15</span></div>
+        <div class="data-row"><label for="hp">HP</label><span class="value"  id="hp">60</span></div>
+      </div>
+    </section>
+    
+  </main>
+  <script src="script.js"></script>
+</body>
+
+</html>
