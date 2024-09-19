@@ -120,7 +120,7 @@ main {
     width: 6rem;
 }
 
-.speed {
+#left > div:nth-child(5) {
     height: 100%
 }
 
