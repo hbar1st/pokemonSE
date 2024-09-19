@@ -38,7 +38,8 @@ main, #container {
 main {
     height: fit-content;
     width: fit-content;
-    max-height: 100vh;
+    max-height: 96vh;
+    min-height: 96vh;
     padding: 0px 3rem 0px 3rem;
     background-color: rgb(2, 2, 60);
     border-radius: 3%;
@@ -196,11 +197,11 @@ main {
 }
 
 #left {
-    transform: skewX(14deg);
+    transform: skewX(13deg);
 }
 
 #right {
-    transform: skewX(-14deg);
+    transform: skewX(-13deg);
 }
 
 #search-button {
