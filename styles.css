@@ -119,6 +119,10 @@ main {
     width: 6rem;
 }
 
+.speed {
+    height: 100%
+}
+
 #types::before {
     content: "Types";
     font-weight: 700;
