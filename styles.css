@@ -36,10 +36,11 @@ main, #container {
 }
 
 main {
-    height: fit-content;
-    width: fit-content;
+    /* height: fit-content;
+    width: fit-content;*/
+    width: min(378px, 98%);
     max-height: 96vh;
-    min-height: 96vh;
+    min-height: min(96vh, 800px); 
     padding: 0px 3rem 0px 3rem;
     background-color: rgb(2, 2, 60);
     border-radius: 3%;
@@ -90,7 +91,6 @@ main {
     background: repeating-radial-gradient( circle,rgb(248, 245, 242) 0%, rgb(191, 179, 196) 29%, rgb(217, 158, 158) 100%);
     background-size: 1px;
     background-position: 50% 50%;
-    
 }
 
 .data-row label {
@@ -109,10 +109,6 @@ main {
 .data-row {
     height: 100%;
     justify-content: center;
-    /* align-content: center;
-    grid-template-columns: 1fr 1fr; */
-    /* width: 100%;
-    flex-direction: row; */
     border: 1px solid silver;
     justify-self: center;
     display: flex;
@@ -146,6 +142,7 @@ main {
     text-align: center;
 
 }
+
 #finder
  {
     display: flex;

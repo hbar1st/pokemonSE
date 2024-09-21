@@ -9,12 +9,12 @@ const male = '\u2642';
 const female = '\u2640';
 
 const fetchData = async (key) => {
-    
+
     try {
-        const res = await fetch(key ? allNamesURL+'/'+key : allNamesURL);
-        if ( res.status === 200 ) {
+        const res = await fetch(key ? allNamesURL + '/' + key : allNamesURL);
+        if (res.status === 200) {
             const data = await res.json();
-            showResults(key,data);    
+            showResults(key, data);
         } else {
             alert("Pokémon not found");
             clearValues();
@@ -31,27 +31,33 @@ const findPokemon = (key) => {
     // U+2640 ♀ FEMALE SIGN	♀	
     //U+2642 ♂ MALE SIGN
     /** replace all non alphabet/number to dash? except male and female?*/
-    
-    const id = Number(key) ? key : key.toLowerCase().replace(/[♀]/g,"-f").replace(/[♂]/g,"-m").replace(/[^a-z]/g,"-");
+
+    const id = Number(key) ? key : key.toLowerCase().replace(/[♀]/g, "-f").replace(/[♂]/g, "-m").replace(/[^a-z]/g, "-");
     fetchData(id);
 }
 
 const showResults = (key, results) => {
-    if ( results.count ) {
+    if (results.count) {
         console.log(results.results);
     } else {
+
+        const makeItFit = (el, remSize) => { //dynamically lower font size on element
+            console.log("remSize: ",remSize);
+            el.style.fontSize = `${remSize}rem`;
+        }
+
         showImg(results);
-        
+
         const myKeys = ['hp', 'speed', 'attack', 'defense', 'special-attack', 'special-defense']
         let resStats = {};
         results.stats.forEach(value => myKeys.includes(value.stat.name) ? resStats[value.stat.name] = value.base_stat : false);
         let resTypes = [];
-        results.types.forEach( value => resTypes.push({name: value.type.name, url: value.type.url}));
+        results.types.forEach(value => resTypes.push({ name: value.type.name, url: value.type.url }));
         let typesEl;
 
         values.forEach((el) => {
             const id = el.getAttribute('id');
-            
+
             const statsMap = {
                 "pokemon-name": results.name.toUpperCase(),
                 "pokemon-id": results.id,
@@ -64,13 +70,25 @@ const showResults = (key, results) => {
                 "special-attack": resStats['special-attack'],
                 "special-defense": resStats['special-defense']
             }
+            
+            // workaround to make longer names fit into the space
+            if (id === "pokemon-name") {
+                switch (statsMap["pokemon-name"].length) {
+                    case 8: makeItFit(el, 0.91); break;
+                    case 9: makeItFit(el, 0.83); break;
+                    case 10: makeItFit(el, 0.75); break;
+                    case 11: makeItFit(el, 0.68); break;
+                    default:
+                        makeItFit(el, 1);
+                }
+            }
             el.textContent = statsMap[id];
         });
-        
+
         showTypes(resTypes);
-        
+
     }
-    
+
     //<span class="value type">GHOST</span>
     function showTypes(resTypes) {
         types.innerHTML = '';
@@ -80,7 +98,7 @@ const showResults = (key, results) => {
     }
 }
 
-svgButton.addEventListener('animationend', ()=> {
+svgButton.addEventListener('animationend', () => {
     svgButton.classList.remove('button-spin');
 })
 
@@ -96,7 +114,7 @@ searchButton.addEventListener("click", (e) => {
 })
 
 function search() {
-    if ( searchInput.value == "" ) {
+    if (searchInput.value == "") {
         clearValues();
     } else {
         svgButton.classList.add('button-spin');
@@ -107,11 +125,11 @@ function search() {
 searchInput.addEventListener("keydown", (e) => {
     if (e.key === "Enter") {
         search();
-    } 
+    }
 });
 
 function clearValues() {
-    values.forEach(val => val.textContent='\u{2B50}');
+    values.forEach(val => val.textContent = '\u{2B50}');
     types.innerHTML = `<span class="value">${'\u{2B50}'}</span>`;
     resetImgDiv();
 }
@@ -122,8 +140,9 @@ function showImg(data) {
         resetImgDiv();
         timeout = 500;
     }
-    setTimeout(()=>{imageDiv.classList.add("expand")}, timeout);
-    imageDiv.innerHTML =`<img id="sprite" src="${data.sprites.front_default}" alt="character image">`;
+    setTimeout(() => { imageDiv.classList.add("expand") }, timeout);
+    imageDiv.innerHTML = `<img id="sprite" src="${data.sprites.front_default}" alt="character image">`;
 }
+
 fetchData();
 clearValues();
