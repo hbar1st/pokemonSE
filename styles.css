@@ -32,7 +32,7 @@ main, #container {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    row-gap: 1rem;
+    row-gap: .5rem;
 }
 
 main {
@@ -48,7 +48,7 @@ main {
 }
 #results {
     position: relative;
-    top: -2.7rem;
+    top: -3rem;
     width: 330px;
     max-width: max(330px, 20rem);
     min-width: min(280px, 40%);
@@ -85,7 +85,6 @@ main {
     text-align: center;
     padding-left: 1px;
     padding-top: 1px;
-    height: 100%;
     width: 100%;
     background-color: rgb(244, 200, 207);
     background: repeating-radial-gradient( circle,rgb(248, 245, 242) 0%, rgb(191, 179, 196) 29%, rgb(217, 158, 158) 100%);
@@ -94,6 +93,10 @@ main {
 }
 
 .data-row label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1 1 100%;
     font-weight: 700;
     color: black;
     padding: 1px;
@@ -101,6 +104,8 @@ main {
     font-variant: small-caps;
 }
 .data-row .value {
+    height: auto;
+    padding: .3rem 0;
     color: white;
     font-weight: 600;
     background: linear-gradient(#b80410ea 0%, rgb(110, 9, 9), #6e1b21ea);
@@ -195,11 +200,11 @@ main {
 }
 
 #left {
-    transform: skewX(13deg);
+    transform: skewX(12deg);
 }
 
 #right {
-    transform: skewX(-13deg);
+    transform: skewX(-12deg);
 }
 
 #search-button {
