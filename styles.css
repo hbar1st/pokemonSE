@@ -87,7 +87,9 @@ main {
     padding-top: 1px;
     width: 100%;
     background-color: rgb(244, 200, 207);
-    background: repeating-radial-gradient( circle,rgb(248, 245, 242) 0%, rgb(191, 179, 196) 29%, rgb(217, 158, 158) 100%);
+    background: linear-gradient(180deg, #b76e79 0%, #ffe6e9 5%,#dda6ae 45%, #dda6ae 49%, #dda6ae 75%, #b76e79 95%, #dda6ae 100%);
+    backface-visibility: hidden;
+    outline: none;
     background-size: 1px;
     background-position: 50% 50%;
 }
@@ -98,7 +100,8 @@ main {
     justify-content: center;
     flex: 1 1 100%;
     font-weight: 700;
-    color: black;
+    text-shadow: -1px -1px 1px rgb(251, 192, 202);
+    color: rgb(80, 7, 7);
     padding: 1px;
     font-size: larger;
     font-variant: small-caps;
@@ -131,10 +134,10 @@ main {
     font-weight: 700;
     font-size: larger;
     font-variant: small-caps;
-    color: black;
-    text-shadow: 1px 1px black;
     padding: 1px;
-    background: repeating-radial-gradient( circle,rgb(248, 245, 242) 0%, rgb(191, 179, 196) 29%, rgb(217, 158, 158) 100%);
+    background: linear-gradient(180deg, #b76e79 0%, #ffe6e9 5%,#dda6ae 45%, #dda6ae 49%, #dda6ae 75%, #b76e79 95%, #dda6ae 100%);
+    text-shadow: -1px -1px 1px rgb(251, 192, 202);
+    color: rgb(80, 7, 7);
     background-size: 1px;
 }
 
@@ -202,11 +205,19 @@ main {
 #left {
     transform: skewX(12deg);
 }
+#left .data-row {
+    border-right: 1px solid white;
+    border-top: 1px solid white;
+}
 
 #right {
     transform: skewX(-12deg);
 }
 
+#right .data-row {
+    border-left: 1px solid white;
+    border-top: 1px solid white;
+}
 #search-button {
     box-sizing: border-box;
     border-radius: 48%;
