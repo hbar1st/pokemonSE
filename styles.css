@@ -36,8 +36,8 @@ main, #container {
 }
 
 main {
-    container-type: size;
-    container-name: main;
+    /* height: fit-content;
+    width: fit-content;*/
     width: min(378px, 98%);
     max-height: 96vh;
     min-height: min(96vh, 800px); 
@@ -291,14 +291,4 @@ main {
 
 #container {
     transform: translateY(22px);
-}
-
-@media only screen and (max-height: 900px) {
-    img {
-        transform: scale(.5,.5);
-    }
-    main {
-        width: 100vw;
-        height: 100vh;
-    }
 }
