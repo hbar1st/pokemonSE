@@ -298,7 +298,9 @@ input {
 @media only screen and (max-height: 700px) {
     main {
         min-width: 100vw;
-        min-height: 100vh;
+        max-width: 100vw;
+        max-height: 100dvh;
+        min-height: 100dvh;
         border-radius: 0%;
     }
 
