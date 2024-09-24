@@ -14,8 +14,8 @@ body {
     max-height: 100%;
     height: 100vh;
     background:
-    repeating-linear-gradient(red, rgb(79, 2, 2)),
-    repeating-radial-gradient(rgb(196, 196, 19) 0%, rgb(13, 218, 205) 20%, rgb(5, 11, 75) 20%,rgb(99, 141, 16) 40%, rgb(53, 8, 157) 40%, rgb(3, 3, 169));
+        repeating-linear-gradient(red, rgb(79, 2, 2)),
+        repeating-radial-gradient(rgb(196, 196, 19) 0%, rgb(13, 218, 205) 20%, rgb(5, 11, 75) 20%, rgb(99, 141, 16) 40%, rgb(53, 8, 157) 40%, rgb(3, 3, 169));
     background-size: 0px 0px, 15px 3px;
     background-position: 0 0;
 }
@@ -27,7 +27,8 @@ svg {
     border-radius: 50%;
 }
 
-main, #container {
+main,
+#container {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -36,16 +37,15 @@ main, #container {
 }
 
 main {
-    /* height: fit-content;
-    width: fit-content;*/
     width: min(378px, 98%);
     max-height: 96vh;
-    min-height: min(96vh, 800px); 
+    min-height: min(96vh, 800px);
     padding: 0px 3rem 0px 3rem;
     background-color: rgb(2, 2, 60);
     border-radius: 3%;
     outline: 1px solid gray;
 }
+
 #results {
     position: relative;
     top: -3rem;
@@ -68,7 +68,7 @@ main {
     min-width: min(100px, 40%);
     display: grid;
     width: auto;
-    margin-left: auto; 
+    margin-left: auto;
     margin-right: auto;
     grid-template-columns: 1fr;
     grid-template-rows: max-content;
@@ -81,13 +81,14 @@ main {
     z-index: -1;
 }
 
-.data-row label, .data-row .value {
+.data-row label,
+.data-row .value {
     text-align: center;
     padding-left: 1px;
     padding-top: 1px;
     width: 100%;
     background-color: rgb(244, 200, 207);
-    background: linear-gradient(180deg, #b76e79 0%, #ffe6e9 5%,#dda6ae 45%, #dda6ae 49%, #dda6ae 75%, #b76e79 95%, #dda6ae 100%);
+    background: linear-gradient(180deg, #b76e79 0%, #ffe6e9 5%, #dda6ae 45%, #dda6ae 49%, #dda6ae 75%, #b76e79 95%, #dda6ae 100%);
     backface-visibility: hidden;
     outline: none;
     background-size: 1px;
@@ -106,6 +107,7 @@ main {
     font-size: larger;
     font-variant: small-caps;
 }
+
 .data-row .value {
     height: auto;
     padding: .3rem 0;
@@ -125,7 +127,7 @@ main {
     width: 6rem;
 }
 
-#left > div:nth-child(5) {
+#left>div:nth-child(5) {
     height: 100%
 }
 
@@ -135,24 +137,24 @@ main {
     font-size: larger;
     font-variant: small-caps;
     padding: 1px;
-    background: linear-gradient(180deg, #b76e79 0%, #ffe6e9 5%,#dda6ae 45%, #dda6ae 49%, #dda6ae 75%, #b76e79 95%, #dda6ae 100%);
+    background: linear-gradient(180deg, #b76e79 0%, #ffe6e9 5%, #dda6ae 45%, #dda6ae 49%, #dda6ae 75%, #b76e79 95%, #dda6ae 100%);
     text-shadow: -1px -1px 1px rgb(251, 192, 202);
     color: rgb(80, 7, 7);
     background-size: 1px;
 }
 
-#search-button, input {
+#search-button,
+input {
     width: 10rem;
-    color:rgb(34,108,195);
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgb(34, 108, 195);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 1.2rem;
     height: 1.5rem;
     text-align: center;
 
 }
 
-#finder
- {
+#finder {
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -161,17 +163,18 @@ main {
 
 #container input {
     border-radius: 4%;
-    background: repeating-linear-gradient(rgb(150, 138, 247) 15% ,white 15%, rgb(240, 247, 208),white 90%, rgb(120, 109, 198) 90%, white);
+    background: repeating-linear-gradient(rgb(150, 138, 247) 15%, white 15%, rgb(240, 247, 208), white 90%, rgb(120, 109, 198) 90%, white);
     background-size: 10%;
     color: rgb(30, 0, 126);
     font-weight: 500;
     height: 2.3rem;
     border: 1px ridge silver;
     outline-color: pink;
+
     &::placeholder-shown {
         font-weight: 300;
         font-size: 1rem;
-        font-family:'Times New Roman', Times, serif;
+        font-family: 'Times New Roman', Times, serif;
         color: black;
     }
 }
@@ -181,7 +184,7 @@ main {
     grid-template-rows: 0fr;
     max-width: 5rem;
     min-width: 5rem;
-    
+
     justify-items: center;
     background-color: navy;
     border: 2px outset white;
@@ -190,34 +193,30 @@ main {
 
     overflow: hidden;
     clip-path: polygon(0% 0%, 100% 0%, 95% 50%, 100% 100%, 0% 100%, 5% 50%);
-    background: linear-gradient(#88030cea 0%, pink 50%,#6e1b21ea 55%, pink 55%, #6e1b21ea 100%);
+    background: linear-gradient(#88030cea 0%, pink 50%, #6e1b21ea 55%, pink 55%, #6e1b21ea 100%);
 }
 
-
-
 #center img {
-    background-color: transparent; 
+    background-color: transparent;
     border-top: 1px ridge pink;
     border-bottom: 1px solid pink;
     overflow: hidden;
 }
 
 #left {
-    transform: skewX(12deg);
+    transform: skewX(10deg);
 }
-#left .data-row {
+
+#right {
+    transform: skewX(-10deg);
+}
+
+#left .data-row,
+#right .data-row {
     border-right: 1px solid white;
     border-top: 1px solid white;
 }
 
-#right {
-    transform: skewX(-12deg);
-}
-
-#right .data-row {
-    border-left: 1px solid white;
-    border-top: 1px solid white;
-}
 #search-button {
     box-sizing: border-box;
     border-radius: 48%;
@@ -227,7 +226,7 @@ main {
     border-color: rgb(0, 0, 0);
     padding: 2px;
     box-shadow: -1px 1px 4px 4px rgb(8, 1, 24);
-    background: repeating-radial-gradient(circle at 0px 0px, white 0%,rgba(17,17,17,0.696) 5%, rgba(17, 17, 17, 0.696) 10%, rgba(17, 17, 17, 0.696) 20%,white 30%,black 60%,white 80%, white 100%);
+    background: repeating-radial-gradient(circle at 0px 0px, white 0%, rgba(17, 17, 17, 0.696) 5%, rgba(17, 17, 17, 0.696) 10%, rgba(17, 17, 17, 0.696) 20%, white 30%, black 60%, white 80%, white 100%);
     margin-top: 1rem;
     background-size: 25px;
     background-position: -1rem 2rem;
@@ -239,26 +238,29 @@ main {
     cursor: pointer;
 }
 
-
 .button-spin {
     transform-origin: 50% 50%;
     animation-name: spin;
     animation-timing-function: linear;
     animation-duration: 1500ms;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards;   
+    animation-fill-mode: forwards;
 }
 
 @keyframes spin {
-    
-    0% { transform: rotate(10deg); }
-    100% { transform: rotate(360deg); }
-}
 
+    0% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
 
 #search-text {
     font-weight: 600;
-    font-family:cursive;
+    font-family: cursive;
 }
 
 .expand {
@@ -266,7 +268,7 @@ main {
     animation-timing-function: linear;
     animation-duration: 500ms;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards;   
+    animation-fill-mode: forwards;
 }
 
 .reset {
@@ -276,7 +278,7 @@ main {
 }
 
 @keyframes expand {
-    0% { 
+    0% {
         grid-template-rows: 0fr;
         box-shadow: 1px 1px 0px 1px blue;
         padding: .5rem 1.3rem .5rem 1.3rem;
@@ -291,4 +293,16 @@ main {
 
 #container {
     transform: translateY(22px);
+}
+
+@media only screen and (max-height: 700px) {
+    main {
+        min-width: 100vw;
+        min-height: 100vh;
+        border-radius: 0%;
+    }
+
+    #title-div img {
+        transform: scale(.7, .7);
+    }
 }
